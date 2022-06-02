@@ -1,22 +1,13 @@
-import logo from './logo.svg';
+import Header from './header/Header';
+import LocationBox from './locationbox/LocationBox'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to frugal pants
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App-background">
+        <Header> </Header>
+        <LocationBox> </LocationBox>
       </header>
     </div>
   );

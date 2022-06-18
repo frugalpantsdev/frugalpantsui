@@ -3,13 +3,9 @@
 }
 
 .App-background {
-  background-color: #f5f5dc;
-  min-height: 100vh;
-  display: flex;
+  background:  linear-gradient(to bottom, #feffff 0%,#a0d8ef 100%);
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: black;
 }
 

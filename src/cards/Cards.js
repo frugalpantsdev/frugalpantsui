@@ -42,7 +42,6 @@ class Cards extends React.Component {
         obj["label"] = (<Row><Col><img className="rounded float-left img-fluid" src={cardDetails.cardImageUrl}/></Col><Col className="text-center">{cardDetails.cardName}</Col></Row>);
         this.state.cards.push(obj);
       })
-    console.log(this.state.cards);
     }
 
 

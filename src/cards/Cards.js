@@ -9,6 +9,7 @@ class Cards extends React.Component {
     this.state = {"cards": []};
 
   }
+
   componentWillMount() {
       fetch("http://api-dev.frugalpants.com/banks/cards")
         .then(res => res.json())

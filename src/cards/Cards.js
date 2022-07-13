@@ -11,7 +11,7 @@ class Cards extends React.Component {
   }
 
   componentWillMount() {
-      fetch("http://api-dev.frugalpants.com/banks/cards")
+      fetch("https://api-dev.frugalpants.com/banks/cards")
         .then(res => res.json())
         .then(
           (result) => {

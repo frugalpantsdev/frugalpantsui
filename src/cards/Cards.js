@@ -6,15 +6,46 @@ import {Col, Row} from 'react-bootstrap';
 class Cards extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {"cards": [
-                    {value:'bofa2',label:<Row><Col><img className="rounded float-left img-fluid" src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8cty_cshsigcm_v_250x157.png"/></Col><Col className="text-center">Bank Of America Secured Card 1</Col></Row> },
-                    {value:'bofa3',label:<Row><Col><img className="rounded float-left img-fluid" src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8cty_cshsigcm_v_250x157.png"/></Col><Col>Bank Of America Secured Card 2</Col></Row> },
-                    {value:'bofa4',label:<Row><Col><img className="rounded float-left img-fluid" src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8cty_cshsigcm_v_250x157.png"/></Col><Col>Bank Of America Secured Card 3</Col></Row> },
-                    {value:'bofa5',label:<Row><Col><img className="rounded float-left img-fluid" src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8cty_cshsigcm_v_250x157.png"/></Col><Col>Bank Of America Secured Card 4</Col></Row> },
-                    {value:'bofa6',label:<Row><Col><img className="rounded float-left img-fluid" src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8cty_cshsigcm_v_250x157.png"/></Col><Col>Bank Of America Secured Card 5</Col></Row> },
-                    {value:'bofa7',label:<Row><Col><img className="rounded float-left img-fluid" src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8cty_cshsigcm_v_250x157.png"/></Col><Col>Bank Of America Secured Card 6</Col></Row> },
-                    {value:'bofa8',label:<Row><Col><img className="rounded float-left img-fluid" src="https://secure.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8cty_cshsigcm_v_250x157.png"/></Col><Col>Bank Of America Secured Card 7</Col></Row> }]};
+    this.state = {"cards": []};
+
   }
+  componentWillMount() {
+      fetch("http://api-dev.frugalpants.com/banks/cards")
+        .then(res => res.json())
+        .then(
+          (result) => {
+            this.setState({
+              isLoaded: true,
+              rawCards: result.response
+            });
+            this.buildCardItems(result.response)
+          },
+          // Note: it's important to handle errors here
+          // instead of a catch() block so that we don't swallow
+          // exceptions from actual bugs in components.
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error
+            });
+          }
+        )
+
+    }
+
+    buildCardItems(response){
+    var json = response;
+    json.map((cardDetails, i ) => {
+        var obj = [];
+        obj["value"] = cardDetails.cardName;
+        obj["label"] = (<Row><Col><img className="rounded float-left img-fluid" src={cardDetails.cardImageUrl}/></Col><Col className="text-center">{cardDetails.cardName}</Col></Row>);
+        this.state.cards.push(obj);
+      })
+    console.log(this.state.cards);
+    }
+
+
+
   render() {
     return (
         <div className="Cards">

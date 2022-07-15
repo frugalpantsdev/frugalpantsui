@@ -2,7 +2,6 @@ import './Cards.css';
 import React from 'react';
 import Select from 'react-select';
 
-
 class Cards extends React.Component {
 
   render() {

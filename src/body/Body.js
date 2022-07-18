@@ -13,7 +13,7 @@ class Body extends React.Component {
   }
 
 componentWillMount() {
-    fetch("https://api-dev.frugalpants.com/banks/cards")
+    fetch("https://api.frugalpants.com/banks/cards")
       .then(res => res.json())
       .then(
         (result) => {

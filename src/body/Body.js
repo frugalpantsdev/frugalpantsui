@@ -5,6 +5,7 @@ import { Container, Box } from '@mui/system';
 import Cards from '../cards/Cards';
 import {Button, Grid, Typography} from '@mui/material';
 import Info from '../info/Info';
+import Footer from '../footer/Footer';
 
 class Body extends React.Component {
 
@@ -72,8 +73,9 @@ componentWillMount() {
     }}
     variant="contained" align='center' color='primary'>Suggest cards</Button>
               </Box>
+              
 
-
+        <Footer></Footer>
             </Container>
           </div>
         </main>

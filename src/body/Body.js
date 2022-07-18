@@ -4,6 +4,7 @@ import Category from '../category/Category';
 import { Container, Box } from '@mui/system';
 import Cards from '../cards/Cards';
 import {Button, Grid, Typography} from '@mui/material';
+import Info from '../info/Info';
 
 class Body extends React.Component {
 
@@ -43,7 +44,7 @@ componentWillMount() {
       obj["value"] = cardDetails.cardName;
       obj["label"] = (<Grid container spacing={2} ><Grid item><Box component="img" sx={{height: 90,width: 145,maxHeight: { xs: 90, md: 90 },
       maxWidth: { xs: 145, md: 145 },}} alt={cardDetails.cardName} src={cardDetails.cardImageUrl} /></Grid>
-      <Grid item><Typography paragraph>{cardDetails.cardName}</Typography> </Grid></Grid>);  
+      <Grid item><Typography paragraph >{cardDetails.cardName}</Typography> </Grid></Grid>);
       cardList.push(obj);
     })
     this.setState({"cards": cardList});
@@ -54,6 +55,7 @@ componentWillMount() {
         <main>
           <div>
             <Container maxWidth="sm" sx={{ p: 2 }}>
+            <Info></Info>
             <Box m={2} pt={3}>
               <Category> </Category>
             </Box>
@@ -68,8 +70,10 @@ componentWillMount() {
         padding: "14px 30px",
         fontSize: "14px"
     }}
-    variant="contained" color='primary'>Suggest cards</Button>
+    variant="contained" align='center' color='primary'>Suggest cards</Button>
               </Box>
+
+
             </Container>
           </div>
         </main>

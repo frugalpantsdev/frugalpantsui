@@ -43,9 +43,9 @@ componentWillMount() {
   json.map((cardDetails, i ) => {
       var obj = [];
       obj["value"] = cardDetails.cardName;
-      obj["label"] = (<Grid container spacing={2} ><Grid item><Box component="img" sx={{height: 90,width: 145,maxHeight: { xs: 90, md: 90 },
-      maxWidth: { xs: 145, md: 145 },}} alt={cardDetails.cardName} src={cardDetails.cardImageUrl} /></Grid>
-      <Grid item><Typography paragraph >{cardDetails.cardName}</Typography> </Grid></Grid>);
+      obj["label"] = (<Box sx={{ p: 1 }}><Box component="img" sx={{height: 60,width: 105,maxHeight: { xs: 65, md: 105 },
+      maxWidth: { xs: 145, md: 145 },}} alt={cardDetails.cardName} src={cardDetails.cardImageUrl} />
+      <Typography  style={{fontSize: "0.9rem"}}>{cardDetails.cardName}</Typography></Box> );
       cardList.push(obj);
     })
     this.setState({"cards": cardList});

@@ -11,7 +11,7 @@ class Header extends React.Component {
   render() {
     return (
        <>
-       <AppBar position='relative' style={{backgroundColor:'linear-gradient(to bottom, #596a72 100%,#cedce7 100%);'}}>
+       <AppBar position='relative' style={{backgroundColor:'linear-gradient(to bottom, #596a72 100%,#cedce7 100%)'}}>
        { /* position='relative' */ }
          <Toolbar>
             {/* <Box component="img" sx={{

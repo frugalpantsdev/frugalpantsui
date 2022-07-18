@@ -9,7 +9,7 @@ class Info extends React.Component {
         <>
           <Typography variant='h5' align='center' color="textPrimary">Welcome to FrugalPants</Typography>
           <Typography variant='h6' align='center' color="textSecondary">FrugalPants is here to put money back into your pocket by maximizing your rewards.
-           You don't need to track your rewards, Just tell us what you are shopping for today and the cards you own, we will help you choose your card to use to maximize your rewards</Typography>
+           You don't need to track your rewards, Just tell us what you are shopping for today and the cards you own, we will help you choose the right card.</Typography>
         </>
     );
   }

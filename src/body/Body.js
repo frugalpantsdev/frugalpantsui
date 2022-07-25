@@ -3,7 +3,7 @@ import React from 'react';
 import Category from '../category/Category';
 import { Container, Box } from '@mui/system';
 import Cards from '../cards/Cards';
-import {Button, Grid, Typography} from '@mui/material';
+import {Button, Table, TableRow, TableCell} from '@mui/material';
 import Info from '../info/Info';
 import Footer from '../footer/Footer';
 
@@ -15,7 +15,7 @@ class Body extends React.Component {
   }
 
 componentWillMount() {
-    fetch("https://api.frugalpants.com/banks/cards")
+    fetch("https://api.frugalpants.com/banks/cardsWithBankDetails")
       .then(res => res.json())
       .then(
         (result) => {
@@ -41,11 +41,30 @@ componentWillMount() {
   var json = response;
   var cardList = [];
   json.map((cardDetails, i ) => {
-      var obj = [];
-      obj["value"] = cardDetails.cardName;
-      obj["label"] = (<Box sx={{ p: 1 }}><Box component="img" sx={{height: 60,width: 105,maxHeight: { xs: 65, md: 105 },
-      maxWidth: { xs: 145, md: 145 },}} alt={cardDetails.cardName} src={cardDetails.cardImageUrl} />
-      <Typography  style={{fontSize: "0.9rem"}}>{cardDetails.cardName}</Typography></Box> );
+      var obj = {};
+      /**
+ {
+    label: "Group 1",
+    options: [
+      { label: "Group 1, option 1", value: "value1" },
+      { label: "Group 1, option 2", value: "value2" }
+    ]
+  }
+      **/
+      obj["label"] = cardDetails.bankName;
+      let options = [];
+      cardDetails.cards.forEach(element => {
+        var temp = {};
+        temp["label"] = (<Table>
+            <TableRow>
+              <TableCell align="left">{element.cardName}</TableCell>
+              <TableCell align="right"><Box component="img" sx={{height: 60,width: 105,maxHeight: { xs: 65, md: 105 },maxWidth: { xs: 145, md: 145 }}} alt={element.cardName} src={element.cardImageUrl}></Box></TableCell>
+            </TableRow>
+        </Table>);
+        temp["value"] = cardDetails.id+"-"+element.id;
+        options.push(temp);
+      });
+      obj["options"] = options;
       cardList.push(obj);
     })
     this.setState({"cards": cardList});

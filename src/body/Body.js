@@ -42,23 +42,14 @@ componentWillMount() {
   var cardList = [];
   json.map((cardDetails, i ) => {
       var obj = {};
-      /**
- {
-    label: "Group 1",
-    options: [
-      { label: "Group 1, option 1", value: "value1" },
-      { label: "Group 1, option 2", value: "value2" }
-    ]
-  }
-      **/
       obj["label"] = cardDetails.bankName;
       let options = [];
       cardDetails.cards.forEach(element => {
         var temp = {};
         temp["label"] = (<Table>
             <TableRow>
-              <TableCell align="left">{element.cardName}</TableCell>
-              <TableCell align="right"><Box component="img" sx={{height: 60,width: 105,maxHeight: { xs: 65, md: 105 },maxWidth: { xs: 145, md: 145 }}} alt={element.cardName} src={element.cardLogoUrl}></Box></TableCell>
+              <TableCell align="left"><Box component="img" sx={{height: 65,width: 105,maxHeight: { xs: 85, md: 105 },maxWidth: { xs: 145, md: 145 }}} alt={element.cardName} src={element.cardLogoUrl}></Box></TableCell>
+              <TableCell align="left" sx={{"overflow-wrap": "break-word"}}>{element.cardName}</TableCell>
             </TableRow>
         </Table>);
         temp["value"] = cardDetails.id+"-"+element.id;
@@ -74,12 +65,12 @@ componentWillMount() {
     return (
         <main>
           <div>
-            <Container maxWidth="sm" sx={{ p: 2 }}>
+            <Container maxWidth="sm" >
             <Info></Info>
             <Box m={2} pt={3}>
               <Category> </Category>
             </Box>
-            <Box m={2} pt={3}>
+            <Box m={1} pt={1}>
               <Cards cards={this.state.cards}></Cards>
             </Box>
             <Box m={2} pt={3}>

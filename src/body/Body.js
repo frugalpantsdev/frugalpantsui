@@ -58,7 +58,7 @@ componentWillMount() {
         temp["label"] = (<Table>
             <TableRow>
               <TableCell align="left">{element.cardName}</TableCell>
-              <TableCell align="right"><Box component="img" sx={{height: 60,width: 105,maxHeight: { xs: 65, md: 105 },maxWidth: { xs: 145, md: 145 }}} alt={element.cardName} src={element.cardImageUrl}></Box></TableCell>
+              <TableCell align="right"><Box component="img" sx={{height: 60,width: 105,maxHeight: { xs: 65, md: 105 },maxWidth: { xs: 145, md: 145 }}} alt={element.cardName} src={element.cardLogoUrl}></Box></TableCell>
             </TableRow>
         </Table>);
         temp["value"] = cardDetails.id+"-"+element.id;

@@ -1,15 +1,20 @@
 import React from 'react';
-import { AppBar, Toolbar,Typography } from '@mui/material';
 
-class Header extends React.Component {
+class Suggestions extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+
 
   render() {
     return (
        <>
-      
+        
        </>
     );
   }
 }
 
-export default Header;
+export default Suggestions;

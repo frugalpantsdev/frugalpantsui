@@ -18,7 +18,7 @@ class Category extends React.Component {
         <>
             <Select options={this.categories.categories} placeholder="I am shopping for"
                                                         isMulti
-                                                        name="colors"
+                                                        name="colors" onChange={this.props.handleCategory}
                                                         className="basic-multi-select"
                                                         classNamePrefix="select" />
         </>

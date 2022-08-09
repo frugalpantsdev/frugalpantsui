@@ -100,14 +100,9 @@ componentWillMount() {
     .then(res => res.json())
     .then(
       (result) => {
-        console.log(JSON.stringify(result));
+          this.setState({suggestions: result});
         }
       )
-  }
-
-  handleSuggestions(result) {
-    let data = result.data;
-    
   }
 
 

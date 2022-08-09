@@ -127,9 +127,9 @@ componentWillMount() {
         fontSize: "14px"
               }}
               variant="contained" align='center' onClick={this.fetchSuggestions} color='primary'>Suggest cards</Button>  </Box>
+            </Container>
             <Suggestions suggestedCards = {this.state.suggestions}></Suggestions>
         <Footer></Footer>
-            </Container>
           </div>
         </main>
     );

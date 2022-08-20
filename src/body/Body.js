@@ -2,7 +2,7 @@ import './Body.css';
 import React from 'react';
 import Category from '../category/Category';
 import { Container, Box } from '@mui/system';
-import { Grid, Button} from '@mui/material';
+import { Grid, Button, Typography} from '@mui/material';
 import Info from '../info/Info';
 import Footer from '../footer/Footer';
 import Suggestions from '../suggestions/Suggestions';
@@ -53,11 +53,11 @@ componentWillMount() {
         var temp = {};
         temp["label"] = (
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item xs={12}>
             <Box component="img" sx={{height: 65,width: 105,maxHeight: { xs: 85, md: 105 },maxWidth: { xs: 145, md: 145 }}} alt={element.cardName} src={element.cardLogoUrl}></Box>
-          </Grid>
-          <Grid item xs={6}>
-           {element.cardName}  
+            <Grid item xs={12}>
+              <Typography>{element.cardName}  </Typography>
+            </Grid>
           </Grid>
         </Grid>
           );

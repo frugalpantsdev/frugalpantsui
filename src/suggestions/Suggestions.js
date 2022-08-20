@@ -30,11 +30,11 @@ class Suggestions extends React.Component {
                       </Icon>
                   </Tooltip></Typography>
                
-                <Grid item xs={6}>
-                <Link style={{fontSize: 15}} target= "_blank"  href={card.card.termsAndConditionsUrl}>Term And Conditions </Link>
-
-                <Link style={{fontSize: 15}} target= "_blank" href={card.card.moreInfoUrl}>More Info </Link>
+                <Grid item xs={12}>
+                <Link  target= "_blank"  href={card.card.termsAndConditionsUrl}>Terms And Conditions </Link>
                 </Grid>
+                <Grid item xs={12}></Grid>
+                <Link  target= "_blank" href={card.card.moreInfoUrl}>More Info </Link>
                 </Grid>
                 <Typography gutterBottom></Typography>
             </Grid>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Grid, Typography, Box,Icon, Link, Tooltip} from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
+import Carousel from 'react-material-ui-carousel'
 
 class Suggestions extends React.Component {
 
@@ -13,18 +14,19 @@ class Suggestions extends React.Component {
   renderSuggestions(props) {
     return (
         props.suggestedCards.map(element => {
-        return( <Grid container columnSpacing={4}>
-            <Grid item  m={2} p={2} >
+        return( 
+          <Grid container columnSpacing={2}>
+            <Grid item xs={12}>   
             <Typography paragraph sx={{textAlign: "center"}}>{element.category}</Typography>
             {element.cardList.map(card => {
                return(<>
-              <Grid style = {{  backgroundColor: "#f2f5f6"}} p={1} m={1} container key={card.id}>
-                <Grid  xs={6} item>
+              <Grid style = {{  backgroundColor: "#f2f5f6"}} p={1}  container key={card.id}>
+                <Grid item  xs={6} >
                   <Box component="img" sx={{height: 65,width: 105,maxHeight: { xs: 85, md: 105 },maxWidth: { xs: 145, md: 145 }}} alt={card.card.cardName} src={card.card.cardLogoUrl}></Box>
                   <Typography style={{fontSize: 15}}>{card.card.cardName}</Typography>
                </Grid>     
                 <Grid xs={6}>
-                <Typography style={{fontSize: 15, textTransform: 'capitalize'}} >{card.reward.rewardValue +" "+ card.reward.rewardType} <Tooltip title={card.reward.rewardText}>
+                <Typography >{card.reward.rewardValue +" "+ card.reward.rewardType} <Tooltip title={card.reward.rewardText}>
                     <Icon><InfoIcon style={{fontSize:"medium"}}>
                       </InfoIcon >
                       </Icon>
@@ -36,14 +38,14 @@ class Suggestions extends React.Component {
                 <Grid item xs={12}></Grid>
                 <Link  target= "_blank" href={card.card.moreInfoUrl}>More Info </Link>
                 </Grid>
-                <Typography gutterBottom></Typography>
             </Grid>
             </>
               )
             })
           }
             </Grid>
-          </Grid>)
+          </Grid>
+          )
         })
     )
   }
@@ -52,7 +54,9 @@ class Suggestions extends React.Component {
   render() {
     return (
        <>
+       <Carousel  autoPlay={true} fullHeightHover={true} duration={1}>
         {this.renderSuggestions(this.props)}
+        </Carousel>
        </>
     );
   }

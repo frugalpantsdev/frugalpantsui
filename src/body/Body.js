@@ -110,13 +110,13 @@ componentWillMount() {
     return (
         <main>
           <div>
-            <Container maxWidth="sm" >
+            <Container   >
             <Info></Info>
             <Box m={2} pt={3}>
               <Category handleCategory={this.handleCategoryChange}> </Category>
             </Box>
-            <Box m={1} pt={1}>
-            <Select options={this.state.cards}  isMulti name="colors" className="basic-multi-select" onChange={this.handleCardChange} placeholder="Cards I Own" classNamePrefix="select" > </Select>
+            <Box m={1} pt={1} >
+            <Select menuPortalTarget={document.body} menuPosition={'fixed'} options={this.state.cards}   isMulti name="colors" className="basic-multi-select" onChange={this.handleCardChange} placeholder="Cards I Own" classNamePrefix="select" > </Select>
             </Box>
             <Box m={2} pt={3}>
               <Button style={{
@@ -126,12 +126,14 @@ componentWillMount() {
                     padding: "14px 30px",
                     fontSize: "14px"
               }}
-              variant="contained" align='center' onClick={this.fetchSuggestions} color='primary'>Suggest cards</Button>  </Box>
-                          <Suggestions suggestedCards = {this.state.suggestions}></Suggestions>
+              variant="contained"  align='center' onClick={this.fetchSuggestions} color='primary'>Suggest cards</Button>  </Box>
+                          <Suggestions  suggestedCards = {this.state.suggestions}></Suggestions>
+                          
 
             </Container>
-        <Footer></Footer>
+            <Footer></Footer>
           </div>
+          
         </main>
     );
   }

@@ -96,7 +96,7 @@ componentWillMount() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify( request )
   };
-    fetch("http://api.frugalpants.com/suggestion/suggestions", requestOptions)
+    fetch("https://api.frugalpants.com/suggestion/suggestions", requestOptions)
     .then(res => res.json())
     .then(
       (result) => {

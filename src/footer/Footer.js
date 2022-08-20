@@ -15,9 +15,7 @@ class Footer extends React.Component {
        <Divider></Divider>
        <footer style={{color: "gray",  bottom: 0}}>
         <Box>
-            <Link href="#" underline="hover" m={1} p={1}>About Us</Link>
             <Link href="#" underline="hover" m={1} p={1}>Feedback</Link>
-            <Link href="#" underline="hover" m={1} p={1}>FAQs</Link>
             <Link href="#" underline="hover" m={1} p={1}>Terms of use</Link>
             <Link href="#" underline="hover" m={1} p={1}>Privacy policy</Link>
         </Box>

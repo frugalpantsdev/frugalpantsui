@@ -96,7 +96,7 @@ componentWillMount() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify( request )
   };
-    fetch("https://api.frugalpants.com/suggestion/suggestions", requestOptions)
+    fetch("http://api.frugalpants.com/suggestion/suggestions", requestOptions)
     .then(res => res.json())
     .then(
       (result) => {
@@ -120,15 +120,16 @@ componentWillMount() {
             </Box>
             <Box m={2} pt={3}>
               <Button style={{
-        maxWidth: '500px', maxHeight: '30px', minWidth: '100px', minHeight: '30px',
-        borderRadius: 35, 
-        backgroundColor: "#169c56", width:"px",
-        padding: "14px 30px",
-        fontSize: "14px"
+                    maxWidth: '500px', maxHeight: '30px', minWidth: '100px', minHeight: '30px',
+                    borderRadius: 35, 
+                    backgroundColor: "#169c56", width:"px",
+                    padding: "14px 30px",
+                    fontSize: "14px"
               }}
               variant="contained" align='center' onClick={this.fetchSuggestions} color='primary'>Suggest cards</Button>  </Box>
+                          <Suggestions suggestedCards = {this.state.suggestions}></Suggestions>
+
             </Container>
-            <Suggestions suggestedCards = {this.state.suggestions}></Suggestions>
         <Footer></Footer>
           </div>
         </main>

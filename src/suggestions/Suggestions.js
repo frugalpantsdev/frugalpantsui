@@ -12,8 +12,9 @@ class Suggestions extends React.Component {
 
 
   renderSuggestions(props) {
-    return (
-        props.suggestedCards.map(element => {
+    return ( <>
+           <Carousel  autoPlay={true} fullHeightHover={true} duration={1}  height={"100px"}>
+         { props.suggestedCards.map(element => {
         return( 
           <Grid container columnSpacing={2}>
             <Grid item xs={12}>   
@@ -46,17 +47,15 @@ class Suggestions extends React.Component {
             </Grid>
           </Grid>
           )
-        })
-    )
+        })}
+       </Carousel> </>)
   }
 
 
   render() {
     return (
        <>
-       <Carousel  autoPlay={true} fullHeightHover={true} duration={1}>
         {this.renderSuggestions(this.props)}
-        </Carousel>
        </>
     );
   }

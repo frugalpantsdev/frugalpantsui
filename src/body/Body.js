@@ -7,6 +7,7 @@ import Info from '../info/Info';
 import Footer from '../footer/Footer';
 import Suggestions from '../suggestions/Suggestions';
 import Select from 'react-select';
+import Suggest from '../suggestions/Suggest';
 
 
 class Body extends React.Component {
@@ -110,7 +111,7 @@ componentWillMount() {
     return (
         <main>
           <div>
-            <Container   >
+            <Container fixed>
             <Info></Info>
             <Box m={2} pt={3}>
               <Category handleCategory={this.handleCategoryChange}> </Category>
@@ -126,11 +127,15 @@ componentWillMount() {
                     padding: "14px 30px",
                     fontSize: "14px"
               }}
-              variant="contained"  align='center' onClick={this.fetchSuggestions} color='primary'>Suggest cards</Button>  </Box>
-                          <Suggestions  suggestedCards = {this.state.suggestions}></Suggestions>
-                          
+              variant="contained"  align='center' onClick={this.fetchSuggestions} color='primary'>Suggest cards</Button> 
+               </Box>
+</Container>
+<Container maxWidth="sm">
+                          {/* <Suggestions  suggestedCards = {this.state.suggestions}></Suggestions> */}
+                          <Suggest  suggestedCards = {this.state.suggestions}></Suggest>
+                          </Container>
 
-            </Container>
+           
             <Footer></Footer>
           </div>
           

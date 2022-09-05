@@ -7,6 +7,7 @@ class Category extends React.Component {
     this.categories = {"categories": [{value:'ONLINE_SHOPPING',label:"Online Shopping"},
                     {value:'GAS',label:"Gas"},
                     {value:'DINING',label:"Dining"},
+                    {value:'TRAVEL',label:"Travel"},
                     {value:'DRUG_STORES',label:"Pharmacy/Drug Stores"},
                     {value:'HOME_IMPROVEMENT',label:"Home Improvement"},
                     {value:'FURNISHING',label:"Furnishing"},

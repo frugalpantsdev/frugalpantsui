@@ -117,7 +117,7 @@ componentWillMount() {
               <Category handleCategory={this.handleCategoryChange}> </Category>
             </Box>
             <Box m={1} pt={1} >
-            <Select menuPortalTarget={document.body} menuPosition={'fixed'} options={this.state.cards}   isMulti name="colors" className="basic-multi-select" onChange={this.handleCardChange} placeholder="Cards I Own" classNamePrefix="select" > </Select>
+            <Select  options={this.state.cards}   isMulti name="colors" className="basic-multi-select" onChange={this.handleCardChange} placeholder="Cards I Own" classNamePrefix="select" > </Select>
             </Box>
             <Box m={2} pt={3}>
               <Button style={{

@@ -17,7 +17,7 @@ class Category extends React.Component {
   render() {
     return (
         <>
-            <Select menuPortalTarget={document.body} menuPosition={'fixed'}  options={this.categories.categories} placeholder="I am shopping for"
+            <Select  options={this.categories.categories} placeholder="I am shopping for"
                                                         isMulti
                                                         name="colors" onChange={this.props.handleCategory}
                                                         className="basic-multi-select"
